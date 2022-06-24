@@ -6,6 +6,9 @@ import Featured from "./features";
 import Confirmed from "./confirm";
 import Profile from "./profile";
 import { FC } from "react";
+import MainStore from "./mainStore";
+import SubStore1 from "./subStore1";
+import SubStore2 from "./subStore2";
 
 export interface IRoutes {
   path: string;
@@ -41,6 +44,20 @@ export const routes: IRoutes[] = [
       {
         path: "new",
         Component: NewProducts,
+      },
+    ],
+  },
+  {
+    path: "/store/*",
+    Component: MainStore,
+    route: [
+      {
+        path: "store1",
+        Component: SubStore1,
+      },
+      {
+        path: "store2",
+        Component: SubStore2,
       },
     ],
   },

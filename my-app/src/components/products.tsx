@@ -2,6 +2,7 @@ import { Link, Outlet, Route, Routes } from "react-router-dom";
 import MapMain from "./mapMain";
 import { routes } from "./myRoutes";
 import React from "react";
+import Nested from "./NextedMap";
 
 const Products = () => {
   return (
@@ -13,9 +14,7 @@ const Products = () => {
         <Link to="featured">Features</Link>
         <Link to="new">New</Link>
       </nav>
-      {routes.map(({ path, Component, route }) =>
-        route && Component == Products ? <MapMain routes={route} /> : ""
-      )}
+      <Nested routes={routes} FComponent={Products} />
       <Outlet />
     </>
   );
