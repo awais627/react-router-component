@@ -9,6 +9,7 @@ import { FC } from "react";
 import MainStore from "./mainStore";
 import SubStore1 from "./subStore1";
 import SubStore2 from "./subStore2";
+import PageNotFound from "./pageNotFound";
 
 export interface IRoutes {
   path: string;
@@ -17,6 +18,10 @@ export interface IRoutes {
 }
 
 export const routes: IRoutes[] = [
+  {
+    path: "*",
+    Component: PageNotFound,
+  },
   {
     path: "/",
     Component: Home,
