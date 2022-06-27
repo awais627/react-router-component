@@ -12,7 +12,6 @@ const MainStore = () => {
       </nav>
       <div>MainStore</div>
       <MapMain routes={routes} FComponent={MainStore} />
-      <Outlet />
     </>
   );
 };

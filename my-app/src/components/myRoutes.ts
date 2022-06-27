@@ -74,7 +74,7 @@ export const routes: IRoutes[] = [
       {
         path: "store2",
         Component: SubStore2,
-        Private: true,
+        Private: false,
       },
     ],
   },

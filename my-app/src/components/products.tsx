@@ -14,7 +14,6 @@ const Products = () => {
         <Link to="new">New</Link>
       </nav>
       <MapMain routes={routes} FComponent={Products} />
-      <Outlet />
     </>
   );
 };
