@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import React, { FC } from "react";
 import { IRoutes } from "./myRoutes";
 
@@ -26,7 +26,15 @@ const MapMain: FC<IMapMainProps> = ({ routes, FComponent }) => {
               )
             )
           : routes.map(({ path, Component, Private }) =>
-              !Private ? <Route path={path} element={<Component />} /> : <></>
+              !Private ? (
+                path === "*" ? (
+                  <Route path={path} element={<Navigate to="/" replace />} />
+                ) : (
+                  <Route path={path} element={<Component />} />
+                )
+              ) : (
+                <></>
+              )
             )}
       </Routes>
     </>
