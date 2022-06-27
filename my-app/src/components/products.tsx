@@ -3,6 +3,7 @@ import MapMain from "./mapMain";
 import { routes } from "./myRoutes";
 import React from "react";
 import Nested from "./NextedMap";
+import Test from "./test";
 
 const Products = () => {
   return (
@@ -14,7 +15,7 @@ const Products = () => {
         <Link to="featured">Features</Link>
         <Link to="new">New</Link>
       </nav>
-      <Nested routes={routes} FComponent={Products} />
+      <Test routes={routes} FComponent={Products} />
       <Outlet />
     </>
   );
