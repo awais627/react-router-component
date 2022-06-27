@@ -14,16 +14,20 @@ const MapMain: FC<IMapMainProps> = ({ routes, FComponent }) => {
         {FComponent
           ? routes.map(({ path, Component, route }) =>
               route && Component == FComponent ? (
-                route.map(({ path, Component }) => (
-                  <Route path={path} element={<Component />} />
-                ))
+                route.map(({ path, Component, Private }) =>
+                  !Private ? (
+                    <Route path={path} element={<Component />} />
+                  ) : (
+                    <></>
+                  )
+                )
               ) : (
                 <></>
               )
             )
-          : routes.map(({ path, Component }) => (
-              <Route path={path} element={<Component />} />
-            ))}
+          : routes.map(({ path, Component, Private }) =>
+              !Private ? <Route path={path} element={<Component />} /> : <></>
+            )}
       </Routes>
     </>
   );
